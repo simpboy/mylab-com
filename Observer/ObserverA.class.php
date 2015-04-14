@@ -8,6 +8,7 @@ class ObserverA implements IObserver{
 	}
 	
 	public function update($state){
+		$this->state = $state;
 		echo "ObserverA mystate update to $state";
 	}
 	

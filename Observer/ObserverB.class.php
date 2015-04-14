@@ -7,6 +7,7 @@ class ObserverB implements IObserver{
 	}
 	
 	public function update($state){
+		$this->state = $state;
 		echo "ObserverB mystate update to $state";
 	}
 	public  function un_listen(){
