@@ -28,9 +28,10 @@
 			};
 
 			$.fn.showLinkLocation = function() {
-				this.filter( "a" ).each(function() {
+				this.each(function() {
 					var link = $( this );
 					link.append( " (" + link.attr( "href" ) + ")" );
+					link.attr('target','_blank');
 				});
 				return this;
 			};
@@ -40,16 +41,17 @@
 		$(function(){
 			$("a").greenify("pink").addClass("greenified");
 			console.log($( "a" ).showLinkLocation());
-
 		});
   </script>
  </head>
  <body>
+ <div>
   <a href="#">a</a>
 	<a href="#">b</a>
 	<a href="#">c</a>
 
 <a href="http://learn.jquery.com/plugins/basic-plugin-creation/">jQuer.Plugin</a>
 	<a href="page.html">Foo</a>
+</div>
  </body>
 </html>
