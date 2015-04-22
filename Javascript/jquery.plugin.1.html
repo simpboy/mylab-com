@@ -21,14 +21,37 @@
 					color:settings.color,
 					backgroundColor:settings.backgroundColor
 				});
-			}
+			};
+
+			$.fn.showLinkLocation = function(){
+				/*
+				return this.each(function(){
+					var link = $(this);
+					link.append("("+link.attr('href')+")");
+					link.attr('href','javascript:void(0)');
+				});
+				*/
+				this.append(function(){
+					return "("+this.href+")";
+				});
+				return this;
+				
+				/*
+				this.filter( "a" ).append(function() {
+				    return " (" + this.href + ")";
+				 });
+				return this;
+				*/
+		      
+			};
 		})(jQuery);
-		$("a").greenify({backgroundColor:"pink"});
+		$("a").greenify({backgroundColor:"pink"}).showLinkLocation();
 	});
 </script>
 </head>
 <body>
 <a href="#">a</a>
 <a href="#">a</a>
+<a href="http://learn.jquery.com/plugins/basic-plugin-creation/#protecting-the-alias-and-adding-scope">JQuery plugin</a>
 </body>
 </html>
